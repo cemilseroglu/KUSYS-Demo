@@ -7,6 +7,6 @@ namespace KUSYS_Demo.Models
     public class AddCourseToUserViewModel
     {
         public IEnumerable<Course>? OwnableCourseList { get; set; }
-        public string CourseId;
-    }
+        public string CourseId { get; set; }
+	}
 }

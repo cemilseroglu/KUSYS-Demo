@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using KUSYS_Demo.Entities.Concrete;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
@@ -50,7 +52,7 @@ namespace KUSYS_Demo.Data.Utilities.Config
 			{
 				var user = new AppUser
 				{
-					StudentId = "ADMİN",
+					StudentNumber = "000000",
 					Email = SystemConfig.SystemAdmin,
 					FirstName = "System Admin",
 					LastName = "Admin",
@@ -70,7 +72,7 @@ namespace KUSYS_Demo.Data.Utilities.Config
 				}
 			}
 		}
-
+		
 		private static void SeedCourses(IServiceProvider serviceProvider)
 		{
 			using (var scope = serviceProvider.CreateScope())
@@ -95,3 +97,4 @@ namespace KUSYS_Demo.Data.Utilities.Config
 		}
 	}
 }
+

@@ -135,13 +135,13 @@ namespace KUSYS_Demo.Areas.Identity.Pages.Account
 				user.FirstName = Input.FirstName;
 				user.LastName = Input.LastName;
 				user.BirthDate = Input.BirthDate;
-				user.StudentId = random.Next(100000, 1000000).ToString();
+				user.StudentNumber = random.Next(100000, 1000000).ToString();
 				user.EmailConfirmed = true;
 				user.Email = Input.Email;
 
-				while (_userManager.Users.Any(x => x.StudentId == user.StudentId))
+				while (_userManager.Users.Any(x => x.StudentNumber == user.StudentNumber))
 				{
-					user.StudentId = random.Next(100000, 1000000).ToString();
+					user.StudentNumber = random.Next(100000, 1000000).ToString();
 				}
 
 				await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);

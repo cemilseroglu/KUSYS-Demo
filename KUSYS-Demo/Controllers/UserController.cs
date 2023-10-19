@@ -5,6 +5,7 @@ using KUSYS_Demo.Data;
 using KUSYS_Demo.Entities.Concrete;
 using KUSYS_Demo.Models;
 using KUSYS_Demo.Data.Services.Abstract;
+using Microsoft.EntityFrameworkCore;
 
 namespace KUSYS_Demo.Controllers
 {
@@ -37,7 +38,7 @@ namespace KUSYS_Demo.Controllers
 		public async Task<IActionResult> OwnedCourses()
 		{
 			var user = await _userManager.GetUserAsync(User);
-			var courseUserList = _context.CourseUser.Where(x=>x.StudentId == user.Id).ToList();
+			var courseUserList = _context.CourseUser.Where(x=>x.UserId == user.Id).Include(x=>x.Course).ToList();
 			
 			return View(courseUserList);
 		}
@@ -64,10 +65,10 @@ namespace KUSYS_Demo.Controllers
 			CourseUser courseUser = new CourseUser() 
 			{ 
 				CourseId = model.CourseId,
-				StudentId = user.StudentId,
+				UserId = user.Id,
 			};
 
-			if(_context.CourseUser.Any(x=>x.CourseId == courseUser.CourseId && x.StudentId == courseUser.StudentId))
+			if(_context.CourseUser.Any(x=>x.CourseId == courseUser.CourseId && x.UserId == courseUser.UserId))
 			{
 				return RedirectToAction("OwnedCourses");
 			}

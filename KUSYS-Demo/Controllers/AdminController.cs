@@ -267,7 +267,7 @@ namespace KUSYS_Demo.Controllers
 			Random random = new Random();
 			AppUser newUser = new AppUser()
 			{
-				StudentId = random.Next(100000, 1000000).ToString(),
+				StudentNumber = random.Next(100000, 1000000).ToString(),
 				FirstName = vm.FirstName,
 				LastName = vm.LastName,
 				Email = vm.Email,
@@ -277,9 +277,9 @@ namespace KUSYS_Demo.Controllers
 				BirthDate = vm.BirthDate,
 			};
 
-			while (_userManager.Users.Any(x => x.StudentId == newUser.StudentId))
+			while (_userManager.Users.Any(x => x.StudentNumber == newUser.StudentNumber))
 			{
-				newUser.StudentId = random.Next(100000, 1000000).ToString();
+				newUser.StudentNumber = random.Next(100000, 1000000).ToString();
 			}
 
 			if (vm.Password.Equals(vm.ConfirmPassword))

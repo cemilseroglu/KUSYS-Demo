@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj": {}
+    "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj": {
+    "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj",
         "projectName": "KUSYS-Demo.Data",
-        "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj",
-        "packagesPath": "C:\\Users\\cemse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Data\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cemse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +32,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
-                "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj"
+              "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj"
               },
-              "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj": {
-                "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj"
+              "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj"
               }
             }
           }
@@ -80,21 +84,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
+    "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj",
         "projectName": "KUSYS-Demo.Entities",
-        "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj",
-        "packagesPath": "C:\\Users\\cemse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cemse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -175,21 +183,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj": {
+    "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj",
         "projectName": "KUSYS-Demo.Helper",
-        "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj",
-        "packagesPath": "C:\\Users\\cemse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cemse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -203,8 +215,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
-                "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj"
+              "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj"
               }
             }
           }
@@ -250,21 +262,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj": {
+    "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj",
         "projectName": "KUSYS-Demo",
-        "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj",
-        "packagesPath": "C:\\Users\\cemse\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo\\obj\\",
+        "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo\\KUSYS-Demo.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\cemse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -278,14 +294,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj": {
-                "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj"
+              "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Data\\KUSYS-Demo.Data.csproj"
               },
-              "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
-                "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj"
+              "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Entities\\KUSYS-Demo.Entities.csproj"
               },
-              "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj": {
-                "projectPath": "C:\\Users\\cemse\\Desktop\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj"
+              "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\asd\\KUSYS-Demo\\KUSYS-Demo.Helper\\KUSYS-Demo.Helper.csproj"
               }
             }
           }
@@ -350,7 +366,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

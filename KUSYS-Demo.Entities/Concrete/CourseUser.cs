@@ -12,9 +12,9 @@ namespace KUSYS_Demo.Entities.Concrete
 	{
 		[ForeignKey("CourseId")]
 		public string CourseId { get; set; }
-		[ForeignKey("StudentId")]
-		public string StudentId { get; set; }
+		[ForeignKey("UserId")]
+		public string UserId { get; set; }
 		public Course Course { get; set; }
-		public AppUser Student { get; set; }
+		public AppUser User { get; set; }
 	}
 }
