@@ -1,0 +1,42 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Erişim izni yok";
+}
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+
+    <div class="card">
+        <div class="row g-0 d-flex align-items-center">
+            <div class="col-lg-4 d-none d-lg-flex">
+                <img src="https://www.gstatic.com/webp/gallery/1.webp"
+                     alt="Trendy Pants and Shoes"
+                     class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
+            </div>
+            <div class="col-lg-8">
+                <div class="card-body">
+                    <h1 class="fw-bold mb-4">
+                        @ViewData["Title"]
+                        <br />
+                        <span class="text-primary">
+                            Özel Alan
+                        </span>
+                    </h1>
+                    <p class="text-muted mb-5">
+                        Bu sayfaya erişebilmek için kayıtlı kullanıcı olmalısınız. Giriş Yapın veya Kayıt Olun !
+                    </p>
+                    <div class="d-md-flex flex-row">
+                        <!-- Submit button -->
+                        <a type="submit" class="btn btn-primary btn-lg ms-md-2" asp-area="Identity" asp-page="/Account/Login">
+                            Giriş
+                        </a>
+                        <a type="submit" class="btn btn-primary btn-lg ms-md-2" asp-area="Identity" asp-page="/Account/Register">
+                            Kayıt Ol
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section: Design Block -->

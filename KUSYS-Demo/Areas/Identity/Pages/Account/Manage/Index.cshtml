@@ -1,0 +1,52 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Kullanıcı Bilgileri";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+<div class="row">
+    <h3>@ViewData["Title"]</h3>
+</div>
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-floating">
+            <ul style="list-style:none;">
+                @foreach (var item in Model.UserRoleList)
+                {
+                    if (item == "Admin")
+                    {
+                        <li style="font-size:20px"><a class="badge bg-info" asp-controller="Admin" asp-action="Index">Admin Paneli</a></li>
+                    }
+                    else if (item == "Student")
+                    {
+                        <li style="font-size:20px"><a class="badge bg-info" asp-controller="User" asp-action="Index">Öğrenci Paneli</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <form id="profile-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-outline mb-4">
+                <input asp-for="Username" class="form-control form-control-lg" disabled />
+                <label asp-for="Username" class="form-label">Kullanıcı Adı / E-mail</label>
+            </div>
+            <div class="form-outline mb-4">
+                <input asp-for="Input.FirstName" class="form-control form-control-lg" disabled />
+                <label asp-for="Input.FirstName" class="form-label"></label>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <input asp-for="Input.LastName" class="form-control form-control-lg" disabled />
+                <label asp-for="Input.LastName" class="form-label"></label>
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

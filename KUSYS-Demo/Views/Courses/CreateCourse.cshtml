@@ -1,0 +1,53 @@
+﻿@model KUSYS_Demo.Models.CourseCreateViewModel
+
+@{
+    ViewData["Title"] = "CourseCreate";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+
+<h1>Kurs Oluştur</h1>
+<span>Aşağıdan istenen bilgileri girerek yeni bir kurs tanımlayabilirsiniz</span>
+<hr />
+<div>
+    <div class="form-group">
+        <div class="col-md-4">
+            <form asp-controller="Courses" asp-action="CourseCreate" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label">Kurs Kodu</label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CourseName" class="control-label">Kurs Adı</label>
+                    <input asp-for="CourseName" class="form-control" />
+                    <span asp-validation-for="CourseName" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="mt-3 btn btn-outline-secondary btn-sm btn-rounded ripple-surface-dark">
+                    <lord-icon src="https://cdn.lordicon.com/jvihlqtw.json"
+                               target="div"
+                               trigger="hover"
+                               stroke="90"
+                               colors="primary:#660099,secondary:#660099"
+                               style="width:40px;height:40px">
+                    </lord-icon>
+                    <span style="color:#660099">Oluştur</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 btn btn-outline-dark btn-sm btn-rounded ripple-surface-dark">
+    <a asp-controller="Courses" asp-action="Index" >
+        <lord-icon src="https://cdn.lordicon.com/iiueiwdd.json"
+                   target="div"
+                   trigger="hover"
+                   stroke="100"
+                   style="width:15px;height:15px">
+        </lord-icon>
+        <span style="color:#660099">Listeye Geri Dön</span>
+    </a>
+</div>

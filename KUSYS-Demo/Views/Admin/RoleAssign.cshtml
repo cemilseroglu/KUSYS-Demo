@@ -1,0 +1,33 @@
+﻿@using KUSYS_Demo.Models
+
+@{
+    ViewData["Title"] = "RoleAssign";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<h1>RoleAssign</h1>
+
+@model List<RoleAssignViewModel>
+@{
+    ViewData["Title"] = "RoleAssign";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<h1>Kullanıcı Rol Atama</h1>
+<form asp-controller="Admin" asp-action="RoleAssign" method="post">
+    @for (int i = 0;i< Model.Count(); i++)
+    {
+        <div class="form-check">            
+            
+            <input asp-for="@Model[i].RoleName" type ="hidden"/>
+            <input asp-for ="@Model[i].RoleId" type="hidden"/>
+
+            <input asp-for="@Model[i].Exist" type="checkbox" class="form-check-input"/>
+            <label asp-for="@Model[i].RoleId" class="form-check-label">@Model[i].RoleName</label>
+            
+            
+        </div>
+    }
+ 
+    <input class="btn btn-success" type="submit" value="Rol Ata" asp-controller="Admin" asp-action="RoleAssign" />
+</form>

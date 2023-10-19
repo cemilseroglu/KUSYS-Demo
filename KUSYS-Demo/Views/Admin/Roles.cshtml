@@ -1,0 +1,92 @@
+﻿@using KUSYS_Demo.Entities.Concrete
+@model List<AppRole>
+@{
+    ViewData["Title"] = "Roles";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+<h1>Roller</h1>
+
+<div class="datatable datatable-sm datatable-bordered datatable-hover">
+    <table>
+        @{
+            if (Model.Count() == 0)
+            {
+                <thead>
+                    <tr>
+                        <td colspan="3">HİÇ BİR KULLANICI YOK</td>
+                    </tr>
+                </thead>
+            }
+            else
+            {
+                <thead>
+                    <tr>
+                        <th class="th-sm">Id</th>
+                        <th class="th-sm">Rol Tanımı</th>
+                        <th class="th-sm">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form method="post">
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                                @if (@item.Name == "Admin")
+                                {
+                                <td>
+                                    <a asp-controller="Admin" asp-action="RoleUpdate" asp-route-id="@item.Id" class="text-warning fa-2x" type="submit" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Düzenle">
+                                        <lord-icon src="https://cdn.lordicon.com/alzqexpi.json"
+                                       trigger="hover"
+                                       colors="primary:#121331,secondary:#646e78,tertiary:#ffc738,quaternary:#f9c9c0,quinary:#ebe6ef"
+                                       state="hover-1"
+                                       style="width:32px;height:32px">
+                                        </lord-icon>
+                                    </a>
+                                </td>
+                                }
+                                else
+                                {
+                                <td>
+                                    <a asp-controller="Admin" asp-action="RoleUpdate" asp-route-id="@item.Id" class="text-warning fa-2x" type="submit" data-mdb-toggle="tooltip" data-mdb-placement="top" title="Düzenle">
+                                        <lord-icon src="https://cdn.lordicon.com/alzqexpi.json"
+                                       trigger="hover"
+                                       colors="primary:#121331,secondary:#646e78,tertiary:#ffc738,quaternary:#f9c9c0,quinary:#ebe6ef"
+                                       state="hover-1"
+                                       style="width:32px;height:32px">
+                                        </lord-icon>
+                                    </a>
+                                    <a asp-controller="Admin" asp-action="RoleDelete" asp-route-id="@item.Id" class="text-danger fa-2x" data-mdb-toggle="tooltip" type="submit" data-mdb-placement="top" title="Sil" onclick="return DeleteConfirm(this);">
+                                        <lord-icon src="https://cdn.lordicon.com/exkbusmy.json"
+                                       trigger="hover"
+                                       colors="outline:#121331,primary:#646e78,secondary:#c71f16,tertiary:#ebe6ef"
+                                       state="hover-empty"
+                                       style="width:32px;height:32px">
+                                        </lord-icon>
+                                    </a>
+                                </td>
+                                }
+                        </tr>
+                        }
+                    </form>
+                </tbody>
+            }
+        }
+    </table>
+</div>
+<div class="mt-3 btn btn-outline-secondary btn-lg btn-rounded ripple-surface-dark">
+    <a asp-action="RoleCreate">
+        <lord-icon src="https://cdn.lordicon.com/mecwbjnp.json"
+                   target="div"
+                   trigger="hover"
+                   colors="primary:#121331,secondary:#660099"
+                   stroke="90"
+                   style="width:50px;height:50px">
+        </lord-icon>
+        <span style="color:#660099">
+            Rol Oluştur
+        </span>
+    </a>
+</div>

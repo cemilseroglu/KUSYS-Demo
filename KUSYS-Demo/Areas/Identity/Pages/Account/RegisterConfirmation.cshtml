@@ -1,0 +1,32 @@
+﻿@page
+@model RegisterConfirmationModel
+
+
+<h1>@ViewData["Title"]</h1>
+
+@{
+    <div class="d-flex flex-column justify-content-center align-items-center text-center my-4 py-4 height-full px-3 main-head">
+        <h1 data-mdb-toggle="animation"
+            data-mdb-animation="fade-in-left"
+            data-mdb-animation-start="onLoad">
+            Doğrulama maili gönderildi.
+        </h1>
+
+        <p class="p-2 alert-warning rounded-pill"
+           data-mdb-toggle="animation"
+           data-mdb-animation="fade-in"
+           data-mdb-animation-start="onLoad"
+           data-mdb-animation-delay=500>
+            Lütfen email adresinizi(<b>@Model.Email</b>) kontrol ediniz. Doğrulama mailini onaylamadan giriş yapamazsınız.
+        </p>
+
+        <lord-icon src="https://cdn.lordicon.com/gzmgulpl.json"
+                   trigger="loop"
+                   delay="1000"
+                   colors="outline:#121331,primary:#660099,secondary:#ebe6ef"
+                   style="width: 350px; height: 350px; text-align: center; margin: -40px">
+        </lord-icon>
+        <hr />
+    </div>
+
+}

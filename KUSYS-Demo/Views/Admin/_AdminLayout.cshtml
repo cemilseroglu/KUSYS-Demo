@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="robots" content="noindex">
+	<title>@ViewData["Title"] - KUSYS-Demo</title>
+	<link rel="stylesheet" href="~/mdb/css/mdb.min.css" asp-append-version="true" />
+	<link rel="stylesheet" href="~/mdb/plugins/css/all.min.css" asp-append-version="true" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+	<script src="~/js/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<!--Main Navigation-->
+<header>
+	<!-- Sidenav -->
+
+	<nav id="admin-sidebar"
+		 class="sidenav pt-5"
+		 data-mdb-hidden="false"
+		 data-mdb-mode="side"
+		 data-mdb-content=".adminMain">
+
+		<div class="fixed-top" style="background-color:#660099; height:48px;">
+			<div class="fixed-top navbar-close-button">
+				<a data-mdb-toggle="sidenav"
+						data-mdb-target="#admin-sidebar"
+						aria-controls="#admin-sidebar"
+						aria-haspopup="true">
+					<script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+					<lord-icon src="https://cdn.lordicon.com/gjljugle.json"
+							   trigger="hover"
+							   scale="60"
+							   colors="primary:#121331,secondary:#ebe6ef"
+							   style="width:35px;height:35px">
+					</lord-icon>
+				</a>
+			</div>
+		</div>
+
+		<div class="text-center text-white rounded-bottom" style="background-color:#660099;">
+			<h3>KUSYS-Demo</h3>
+			<h4>Admin</h4>
+			<hr>
+		</div>
+
+		<ul class="sidenav-menu pt-2">
+			<li class="sidenav-item">
+				<a type="button"
+				   class="sidenav-link"
+				   asp-action="Index"
+				   asp-controller="Admin">
+					<i class="fas fa-home me-3"></i>
+					<span>Anasayfa</span>
+				</a>
+			</li>
+			<li class="sidenav-item">
+				<a type="button"
+				   class="sidenav-link"
+				   asp-action="Users"
+				   asp-controller="Admin">
+					<i class="fas fa-users me-3"></i>
+					<span>Öğrenciler</span>
+				</a>
+			</li>
+			<li class="sidenav-item">
+				<a type="button"
+				   class="sidenav-link"
+				   asp-action="Index"
+				   asp-controller="Courses">
+					<i class="fas fa-users me-3"></i>
+					<span>Kurslar</span>
+				</a>
+			</li>
+			<li class="sidenav-item">
+				<a type="button"
+				   class="sidenav-link"
+				   asp-controller="Admin"
+				   asp-action="Roles">
+					<i class="fas fas fa-users-cog me-3"></i>
+					<span>Roller</span>
+				</a>
+			</li>
+
+			<li class="sidenav-item">
+				<a type="button"
+				   class="sidenav-link"
+				   asp-controller="Home"
+				   asp-action="Index">
+					<i class="fas fas fa-share me-3"></i>
+					<span>Ana menü</span>
+				</a>
+			</li>
+			<li>
+				@{
+					System.Diagnostics.Debug.Assert(User.Identity != null, "User.Identity != null");
+					if (User.Identity.IsAuthenticated)
+					{
+						<form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+							<button type="submit" class="btn btn-danger p-2 mb-3"><i class="fas fa-sign-out-alt"></i>Oturumu Kapat</button>
+						</form>
+					}
+					else
+					{
+						<p>Herhangi bir hesaba giriş yapılmadı.</p>
+					}
+				}
+			</li>
+
+		</ul>
+	</nav>
+	<!-- Sidenav -->
+</header>
+<body>
+	<!--Main Navigation-->
+	<!-- Toggler -->
+	<button data-mdb-toggle="sidenav"
+			data-mdb-target="#admin-sidebar"
+			aria-controls="#admin-sidebar"
+			aria-haspopup="true"
+			class="btn btn-secondary position-fixed navbar-toggle-button" style="background-color: #660099">
+		<i class="fas fa-bars"></i>
+	</button>
+	<!-- Toggler -->
+	<!--Main layout-->
+	<main class="adminMain pb-5">
+		@RenderBody()
+	</main>
+	<!--Main layout-->
+	<!--Footer-->
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous"></script>
+
+<script>
+	var obj = { status: false, ele: null };
+	function DeleteConfirm(btnDelete) {
+		if (obj.status) {
+			obj.status = false;
+			return true;
+		};
+
+		Swal.fire({
+			title: 'İşleme Devam Edilsin mi?',
+			text: "Bu işleme devam etmek kalıcı olarak silme işlemini devam ettirir.",
+			type: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Evet, devam etmek istiyorum',
+			cancelButtonText: "İptal",
+
+		}).then((result) => {
+			if (result.value) {
+				obj.status = true;
+				//do postback on success
+				obj.ele.click();
+
+				Swal.fire({
+					title: 'Silindi!',
+					text: 'Silme işlemi başarılı',
+					type: 'success',
+				});
+			}
+		});
+		obj.ele = btnDelete;
+		return false;
+	};
+</script>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/mdb/js/mdb.min.js" asp-append-version="true"></script>
+<script src="~/mdb/plugins/js/all.min.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@await RenderSectionAsync("Scripts", required: false)
+@await Component.InvokeAsync("NToastNotify")
+</html>
+
+
+<script>
+	let isSidenavHidden = false;
+	const sidenav = document.getElementById('admin-sidebar');
+	const instance = mdb.Sidenav.getInstance(sidenav);
+
+
+	let innerWidth = null;
+
+	const setMode = () => {
+		if (window.innerWidth === innerWidth) return;
+
+		innerWidth = window.innerWidth;
+		const isFrontPage = 0;
+
+		if (innerWidth <= 1440 || isFrontPage || isSidenavHidden) {
+			instance.changeMode('over');
+			instance.hide();
+			return;
+		}
+		instance.changeMode('side');
+		instance.show();
+	};
+
+
+	if( sidenav ) {
+		window.addEventListener('resize', setMode);
+		setMode();
+	}
+
+</script>

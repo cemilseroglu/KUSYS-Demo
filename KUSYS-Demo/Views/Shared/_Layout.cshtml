@@ -1,0 +1,181 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using KUSYS_Demo.Entities.Concrete
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="robots" content="noindex">
+    <title>@ViewData["Title"] - KUSYS-Demo</title>
+    <link rel="stylesheet" href="~/mdb/css/mdb.min.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/mdb/plugins/css/all.min.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>   
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Rock+Salt|Source+Code+Pro:300,400,600" rel="stylesheet"><link rel="stylesheet" href="~/js/CreditCard.js">
+    <link rel="stylesheet" href="~/css/CreditCard.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/timer.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/ownedExams.css" asp-append-version="true"/>
+    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+    <script src="~/mdb/plugins/js/filters.min.js"></script>
+</head>
+<body>
+    <div class="navbar-space"></div>
+
+    <header class="navbar-header">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#660099">
+            <!-- Container wrapper -->
+            <div class="container-fluid px-4">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">KUSYS-Demo</a>
+
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <!-- Link -->
+                       
+                        
+
+                    </ul>
+                    <partial name="_LoginPartial"/>
+                    <!-- Icons -->
+
+                    <!-- Search -->
+
+                </div>
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
+    </header>
+
+<header>
+    @RenderSection("SettingSidenav",false)
+</header>
+<div class="container" style="min-height:calc(100vh - 58.6px)">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      
+    </section>
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+           <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          
+          
+        </div>
+        <!--Grid column--> 
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          
+          
+        </div>
+        <!--Grid column--> 
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          
+        </div>
+        <!--Grid column-->
+
+
+        <!--Grid column-->
+        <!--Grid column-->  
+         <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">  
+        </div>
+        <!--Grid column--> 
+        <!--Grid column-->
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+        </div>
+        <!--Grid column--> 
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/mdb/js/mdb.min.js" asp-append-version="true"></script>
+<script src="~/mdb/js/modules/charts.min.js" asp-append-version="true"></script>
+<script src="~/mdb/plugins/js/all.min.js" asp-append-version="true"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+
+@await RenderSectionAsync("Scripts", required: false)
+@await Component.InvokeAsync("NToastNotify")
+
+</body>
+</html>
+
+<script>
+
+        let isSidenavHidden = false;
+        const sidenav = document.getElementById('setting-sidenav');
+        const instance = mdb.Sidenav.getInstance(sidenav);
+
+
+        let innerWidth = null;
+
+        const setMode = () => {
+            if (window.innerWidth === innerWidth) return;
+
+            innerWidth = window.innerWidth;
+            const isFrontPage = 0;
+
+            if (innerWidth <= 1440 || isFrontPage || isSidenavHidden) {
+                instance.changeMode('over');
+                instance.hide();
+                return;
+            }
+            instance.changeMode('side');
+            instance.show();
+        };
+
+
+        if( sidenav ) {
+            window.addEventListener('resize', setMode);
+            setMode();
+        }
+
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>

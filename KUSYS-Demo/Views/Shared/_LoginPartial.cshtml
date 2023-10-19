@@ -1,0 +1,48 @@
+﻿@using KUSYS_Demo.Entities.Concrete
+@using Microsoft.AspNetCore.Identity
+@using System.Security.Claims
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        AppUser user = await UserManager.GetUserAsync(User);
+        var firtsName = user.FirstName;
+        <div class="btn-group shadow-0" role="group">
+            <li class="nav-item d-flex me-2">
+            </li>
+            
+        </div>
+
+        <li class="nav-item me-3 me-lg-0 dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-mdb-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span>Merhaba, @firtsName &nbsp;</span>
+              <i class="fas fa-user"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="sidenav-item">
+                    <a class="dropdown-item" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profil</a>
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                    <form id="logout-form" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new {area = ""})">
+                        <a id="logout-button" class="dropdown-item">Çıkış</a>
+                    </form>
+                </li>
+            </ul>
+        </li>
+    }
+    else
+    {
+        <div class="btn-group shadow-0" role="group">
+        </div>
+    }
+</ul>

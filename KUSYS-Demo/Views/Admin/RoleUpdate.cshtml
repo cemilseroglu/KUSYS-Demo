@@ -1,0 +1,71 @@
+﻿@model KUSYS_Demo.Models.RoleViewModel
+
+@{
+    ViewData["Title"] = "RoleUpdate";
+    Layout = "~/Views/Admin/_AdminLayout.cshtml";
+}
+
+@*<h1>RoleUpdate</h1>
+
+<h4>RoleViewModel</h4>*@
+
+<h1>Rolü Düzenle</h1>
+<span>Aşağıdan rol ismi girerek rolü düzenleyebilirsiniz</span>
+
+<hr />
+<div>
+    <div class="col-md-4">
+        <form asp-action="RoleUpdate">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            
+            <input type="hidden" asp-for="Id"/>
+            <button type="submit" class="mt-3 btn btn-outline-secondary btn-sm btn-rounded ripple-surface-dark">
+                <lord-icon
+                    src="https://cdn.lordicon.com/sbiheqdr.json"
+                    target="div"
+                    trigger="hover"
+                    stroke="90"
+                    colors="primary:#121331,secondary:#660099"
+                    style="width:40px;height:40px">
+                </lord-icon>
+                <span style="color:#660099">Güncelle</span>
+            </button>
+            @*<div class="form-group">
+                <input type="submit" value="Güncelle" class="btn btn-primary" />
+            </div>*@
+        </form>
+    </div>
+</div>
+
+<div>
+
+    <div class="mt-3 d-flex justify-content-start"> 
+        <div class="text-center">
+            <a class="align-self-start btn btn-sm btn-outline-dark btn-rounded ripple-surface-dark" asp-action="Index">
+                <div class="row">
+                    <div class="col-md-2 px-0">
+                        <lord-icon
+                            src="https://cdn.lordicon.com/iiueiwdd.json"
+                            target="a.btn"
+                            trigger="hover"
+                            stroke="100"
+                            style="width:30px;height:30px">
+                        </lord-icon>
+                    </div>
+                    <div class="col-md-10 align-self-center">
+                        <span style="color:#660099">
+                            Geri Dön
+                        </span>
+                    </div>
+                    <br />
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

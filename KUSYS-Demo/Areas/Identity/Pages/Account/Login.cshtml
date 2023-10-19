@@ -1,0 +1,59 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Kullanıcı Girişi";
+}
+
+<style>
+    .divider:after,
+    .divider:before {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: #eee;
+    }
+</style>
+
+<div class="container p-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100 p-xl-5 p-lg-5">
+        <div class="col-md-7 col-lg-5 col-xl-4 offset-xl-1">
+            <form id="account" class="aling-items-center" method="post">
+                <h1>@ViewData["Title"]</h1>
+                <h5>Giriş için hesap bilgilerinizi giriniz</h5>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-outline mb-2 mt-4">
+                    <input asp-for="Input.Email" class="form-control form-control-lg" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email" class="form-label">E-Posta Adresi</label>
+                </div>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <div class="form-outline mb-2">
+                    <input asp-for="Input.Password" class="form-control form-control-lg" autocomplete="current-password" aria-required="true" />
+                    <label asp-for="Input.Password" class="form-label">Parola</label>
+                </div>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <!-- Checkbox -->
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            @Html.DisplayName("Beni Hatırla?")
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="btn btn-primary btn-lg btn-block mb-4 btn-rounded" style="background-color:#0093D9">Giriş Yap</button>
+                </div>
+                <div>
+                </div>
+            </form>
+            <a href="../Account/Register" class="btn btn-success btn-lg btn-block mb-4 btn-rounded" style="background-color:#5cb85c">Kayıt Ol!</a>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

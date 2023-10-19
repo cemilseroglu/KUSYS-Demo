@@ -1,0 +1,16 @@
+﻿@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+<!-- Sidenav -->
+<nav id="setting-sidenav"
+     class="sidenav bg-light sidenav-dark pt-5"
+     data-mdb-hidden="false"
+     data-mdb-mode="side"
+     data-mdb-content=".container">
+
+    <ul class="sidenav-menu">
+        </li>
+        <li class="sidenav-item"><a class="sidenav-link @ManageNavPages.IndexNavClass(ViewContext)" id="profile" asp-page="./Index"><i class="fas fa-user-alt m-2"></i>Profil</a></li>
+        <li class="sidenav-item"><a class="sidenav-link @ManageNavPages.ChangePasswordNavClass(ViewContext)" id="change-password" asp-page="./ChangePassword"><i class="fas fa-key m-2"></i>Şifre Değiştir</a></li>
+        <li class="sidenav-item"><a class="sidenav-link" asp-controller="User" asp-action="ChangeProfileSettings"><i class="fas fa-key m-2"></i>Kullanıcı Bilgilerini Değiştir</a></li>
+    </ul>
+</nav>
